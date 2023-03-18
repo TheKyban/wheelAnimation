@@ -1,0 +1,137 @@
+*{
+    padding: 0;
+    margin: 0;
+    
+    box-sizing:border-box;
+}
+
+body {
+    background: linear-gradient(45deg,rgb(211, 25, 25),rgb(83, 83, 221));
+    width: 100vw;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.wheel {
+    width: 70vw;
+    height: 70vw;
+    max-width: 500px;
+    max-height: 500px;
+    border:5px rgb(55, 63, 75);
+    border-style: double;
+    border-radius:50%;
+    position: absolute;
+    animation-name: wheel;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    
+    
+}
+.wheel * {
+    position: absolute;
+
+}
+.line {
+    width: 50%;
+    height: 2px;
+    background: linear-gradient(90deg,black,yellow);
+    transform-origin: 0% 0%;
+    top: 50%;
+    left: 50%;
+    border-radius: 45%;
+}
+
+.line:nth-of-type(1) {
+    transform: rotate(60deg);
+}
+
+.line:nth-of-type(2) {   
+    transform: rotate(120deg);
+}
+
+.line:nth-of-type(3) {
+    transform: rotate(180deg);
+}
+.line:nth-of-type(4) {
+    transform: rotate(240deg);
+}
+.line:nth-of-type(5) {
+    transform: rotate(300deg);
+}
+
+
+.cabins {
+    width: 17%;
+    height: 18%;
+    /* background: linear-gradient(180deg,rgb(255, 255, 0), rgb(182, 33, 33)); */
+    background-color: red;
+    /* border: 2px solid black; */
+    position: absolute;
+    transform-origin: 50% 0%;
+    animation-name: cabins;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    /* transition: all 0ms ease-in-out 1s; */
+}
+.cabins:nth-of-type(1) {
+    right: -8.5%;
+  top: 50%;
+}
+.cabins:nth-of-type(2) {
+    left: -8.5%;
+  top: 50%;
+}
+.cabins:nth-of-type(3) {
+    left: 17%;
+  top: 93%;
+}
+.cabins:nth-of-type(4) {
+    right: 17%;
+    top: 93%;
+}
+.cabins:nth-of-type(5) {
+    left: 17%;
+  top: 7%;
+}
+.cabins:nth-of-type(6) {
+    right: 17%;
+    top: 7%;
+  
+}
+
+
+@keyframes wheel{
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes cabins{
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        /* background: linear-gradient(180deg,rgb(15, 44, 212), rgb(182, 33, 33)); */
+        background: blue;
+        
+    }
+    50% {
+        /* background: linear-gradient(180deg,rgb(255, 17, 0), rgba(117, 133, 46, 0.993)); */
+        background: gray;
+    }
+    75% {
+        background: yellowgreen;
+        /* background: linear-gradient(180deg,rgb(53, 224, 10), rgba(34, 196, 196, 0.993)); */
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
